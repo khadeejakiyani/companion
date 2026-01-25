@@ -1,0 +1,65 @@
+import PersonCard from "@/components/circle/PersonCard";
+import TeaTimeButton from "@/components/circle/TeaTimeButton";
+
+const circleMembers = [
+  {
+    id: "1",
+    name: "Margaret",
+    status: "available" as const,
+    avatar: "👩‍🦳",
+    relationship: "Sister",
+  },
+  {
+    id: "2", 
+    name: "Dorothy",
+    status: "available" as const,
+    avatar: "👵",
+    relationship: "Best Friend",
+  },
+  {
+    id: "3",
+    name: "Helen",
+    status: "resting" as const,
+    avatar: "👩‍🦱",
+    relationship: "Daughter",
+  },
+  {
+    id: "4",
+    name: "Patricia",
+    status: "available" as const,
+    avatar: "👩‍🦰",
+    relationship: "Neighbour",
+  },
+];
+
+const MyCirclePage = () => {
+  return (
+    <div className="container max-w-2xl mx-auto px-4 py-8">
+      {/* Page header */}
+      <header className="mb-8">
+        <h1 className="text-3xl font-serif mb-2">My Circle</h1>
+        <p className="text-lg text-muted-foreground">
+          Your trusted friends and family
+        </p>
+      </header>
+
+      {/* Tea Time group call button */}
+      <TeaTimeButton />
+
+      {/* Circle members */}
+      <section aria-labelledby="members-heading">
+        <h2 id="members-heading" className="text-2xl font-serif mb-6">
+          Your People
+        </h2>
+        
+        <div className="space-y-4">
+          {circleMembers.map((member) => (
+            <PersonCard key={member.id} person={member} />
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default MyCirclePage;

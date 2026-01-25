@@ -1,0 +1,60 @@
+interface MoodCheckInProps {
+  selectedMood: string | null;
+  onMoodSelect: (mood: string) => void;
+}
+
+const moods = [
+  { id: "calm", emoji: "😌", label: "Calm", bgClass: "bg-sage-light", borderClass: "border-sage" },
+  { id: "okay", emoji: "🙂", label: "Okay", bgClass: "bg-sunny-yellow", borderClass: "border-amber-300" },
+  { id: "low", emoji: "😔", label: "Low", bgClass: "bg-calm-blue", borderClass: "border-blue-300" },
+  { id: "anxious", emoji: "😟", label: "Anxious", bgClass: "bg-rose-light", borderClass: "border-rose" },
+];
+
+const MoodCheckIn = ({ selectedMood, onMoodSelect }: MoodCheckInProps) => {
+  return (
+    <section className="mb-10" aria-labelledby="mood-heading">
+      <h2 id="mood-heading" className="text-2xl font-serif mb-6 text-center">
+        How are you feeling today?
+      </h2>
+      
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+        {moods.map((mood) => (
+          <button
+            key={mood.id}
+            onClick={() => onMoodSelect(mood.id)}
+            className={`mood-button ${mood.bgClass} border-2 ${
+              selectedMood === mood.id 
+                ? `${mood.borderClass} ring-4 ring-primary/30` 
+                : 'border-transparent'
+            }`}
+            aria-pressed={selectedMood === mood.id}
+            aria-label={`I'm feeling ${mood.label}`}
+          >
+            <span className="text-5xl mb-3" role="img" aria-hidden="true">
+              {mood.emoji}
+            </span>
+            <span className="text-lg font-medium">{mood.label}</span>
+          </button>
+        ))}
+      </div>
+
+      {selectedMood && (
+        <div 
+          className="mt-6 p-5 bg-card rounded-2xl text-center"
+          role="status"
+          aria-live="polite"
+        >
+          <p className="text-lg">
+            Thank you for sharing. 
+            {selectedMood === "calm" && " How wonderful! 💚"}
+            {selectedMood === "okay" && " That's perfectly fine. 🌸"}
+            {selectedMood === "low" && " I'm here with you. 💙"}
+            {selectedMood === "anxious" && " Take a deep breath. 🌿"}
+          </p>
+        </div>
+      )}
+    </section>
+  );
+};
+
+export default MoodCheckIn;
