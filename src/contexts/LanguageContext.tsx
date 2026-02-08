@@ -25,6 +25,25 @@ const translations: Record<Language, Record<string, string>> = {
     "greeting.night": "Good Night",
     "greeting.subtitle": "It's lovely to see you today",
     
+    // Auth
+    "auth.title": "Welcome",
+    "auth.signinSubtitle": "Sign in to continue",
+    "auth.signupSubtitle": "Create your account",
+    "auth.forgotSubtitle": "We'll send you a reset link",
+    "auth.emailPlaceholder": "Email address",
+    "auth.passwordPlaceholder": "Password",
+    "auth.signIn": "Sign In",
+    "auth.signUp": "Sign Up",
+    "auth.resetPassword": "Send Reset Link",
+    "auth.forgotLink": "Forgot your password?",
+    "auth.signupLink": "Don't have an account? Sign Up",
+    "auth.signinLink": "Already have an account? Sign In",
+    "auth.invalidCredentials": "Invalid email or password",
+    "auth.emailNotConfirmed": "Please verify your email first",
+    "auth.alreadyRegistered": "This email is already registered",
+    "auth.checkEmail": "Check your email to verify your account",
+    "auth.resetSent": "Password reset link sent to your email",
+
     // Login
     "login.welcome": "Welcome",
     "login.subtitle": "Let's start your day together",
@@ -231,6 +250,25 @@ const translations: Record<Language, Record<string, string>> = {
     "greeting.night": "شب بخیر",
     "greeting.subtitle": "آج آپ سے مل کر خوشی ہوئی",
     
+    // Auth
+    "auth.title": "خوش آمدید",
+    "auth.signinSubtitle": "جاری رکھنے کے لیے سائن ان کریں",
+    "auth.signupSubtitle": "اپنا اکاؤنٹ بنائیں",
+    "auth.forgotSubtitle": "ہم آپ کو ری سیٹ لنک بھیجیں گے",
+    "auth.emailPlaceholder": "ای میل ایڈریس",
+    "auth.passwordPlaceholder": "پاس ورڈ",
+    "auth.signIn": "سائن ان",
+    "auth.signUp": "سائن اپ",
+    "auth.resetPassword": "ری سیٹ لنک بھیجیں",
+    "auth.forgotLink": "پاس ورڈ بھول گئے؟",
+    "auth.signupLink": "اکاؤنٹ نہیں ہے؟ سائن اپ کریں",
+    "auth.signinLink": "پہلے سے اکاؤنٹ ہے؟ سائن ان کریں",
+    "auth.invalidCredentials": "غلط ای میل یا پاس ورڈ",
+    "auth.emailNotConfirmed": "پہلے اپنی ای میل کی تصدیق کریں",
+    "auth.alreadyRegistered": "یہ ای میل پہلے سے رجسٹرڈ ہے",
+    "auth.checkEmail": "اپنے اکاؤنٹ کی تصدیق کے لیے ای میل چیک کریں",
+    "auth.resetSent": "پاس ورڈ ری سیٹ لنک آپ کی ای میل پر بھیج دیا گیا",
+
     // Login
     "login.welcome": "خوش آمدید",
     "login.subtitle": "آئیے اپنا دن ساتھ شروع کریں",

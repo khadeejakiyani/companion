@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { OnboardingProvider, useOnboarding } from "./contexts/OnboardingContext";
 import Layout from "./components/Layout";
+import AuthPage from "./pages/AuthPage";
 import LoginPage from "./pages/LoginPage";
 import MoodCheckInPage from "./pages/MoodCheckInPage";
 import HomePage from "./pages/HomePage";
@@ -22,6 +23,10 @@ const OnboardingRouter = () => {
   const { step } = useOnboarding();
 
   // Step-by-step onboarding flow
+  if (step === "auth") {
+    return <AuthPage />;
+  }
+
   if (step === "login") {
     return <LoginPage />;
   }
